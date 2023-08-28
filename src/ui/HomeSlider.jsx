@@ -28,7 +28,7 @@ function HomeSlider() {
   };
 
   return (
-    <div className="group relative h-[400px] w-[100%] pt-[20px] md:w-[70%]">
+    <div className="group relative h-[400px] w-[100%] pt-[20px] md:w-[80%]">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="h-full w-full bg-cover bg-center duration-500"
