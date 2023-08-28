@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function HomeLinks() {
   return (
-    <ul className="flex h-[400px] w-[100%] flex-col items-start justify-around border-r border-gray px-[20px] pt-[20px] md:w-[30%]  ">
+    <ul className="flex h-[400px] w-[100%]  flex-col items-start justify-around  px-[20px] pt-[20px] md:w-[30%] md:border-r md:border-gray  ">
       <li>
         <Link className="font-medium ">Women's Fashion</Link>
       </li>

@@ -1,14 +1,16 @@
 import { useState } from "react";
-import imageOne from "../assets/homeImage1.jpg";
-import imageTwo from "../assets/homeImage2.jpg";
-import imageThree from "../assets/homeImage3.jpg";
-import imageFour from "../assets/homeImage4.jpg";
+import imageOne from "../assets/1.jpg";
+import imageTwo from "../assets/2.jpg";
+import imageThree from "../assets/3.jpg";
+import imageFour from "../assets/4.jpg";
+import imageFive from "../assets/5.jpg";
 
 const slides = [
   { url: imageOne },
   { url: imageTwo },
   { url: imageThree },
   { url: imageFour },
+  { url: imageFive },
 ];
 
 function HomeSlider() {
@@ -34,7 +36,7 @@ function HomeSlider() {
       {/* Right Arrow */}
       <div
         onClick={nextSlide}
-        className="absolute right-[20px] top-[50%] hidden  translate-y-[-50%] cursor-pointer text-xl text-white group-hover:block"
+        className="absolute right-[20px]  top-[50%] z-30 hidden  translate-y-[-50%] cursor-pointer text-xl text-white group-hover:block"
       >
         <i className="fa-solid fa-angles-right"></i>
       </div>
@@ -42,10 +44,12 @@ function HomeSlider() {
       {/* Left Arrow */}
       <div
         onClick={prevSlide}
-        className="absolute left-[20px] top-[50%] hidden translate-y-[-50%] cursor-pointer text-xl text-white group-hover:block"
+        className="absolute left-[20px] top-[50%] z-30 hidden translate-y-[-50%] cursor-pointer text-xl text-white group-hover:block"
       >
         <i className="fa-solid fa-angles-left"></i>
       </div>
+      {/* OverLay */}
+      <div className="absolute left-0 top-[20px] h-[95%] w-[100%] bg-primary opacity-[0.4]"></div>
     </div>
   );
 }
