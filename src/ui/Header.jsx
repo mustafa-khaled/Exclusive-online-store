@@ -5,8 +5,8 @@ import Logo from "./Logo";
 
 function Header() {
   return (
-    <header className="flex h-[70px] items-center  bg-red-500">
-      <Container styles={"flex items-center justify-between"}>
+    <header className="  text-primary border-gray flex h-[70px] items-center border-b">
+      <Container styles={"flex items-center justify-between gap-[10px]"}>
         <Logo />
         <HeaderLinks />
         <HeaderOperations />
