@@ -5,14 +5,10 @@ import App from "./App.jsx";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./index.css";
 
-import { BrowserRouter } from "react-router-dom";
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <SideBarProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <App />
     </SideBarProvider>
   </React.StrictMode>,
 );
