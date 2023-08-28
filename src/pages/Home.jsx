@@ -2,6 +2,8 @@ import HomeLinks from "../ui/HomeLinks";
 import HomeSlider from "../ui/HomeSlider";
 import BestSelling from "../components/BestSelling";
 import Category from "../components/Category";
+import EnhanceMusic from "../components/EnhanceMusic";
+import OurProducts from "../components/OurProducts";
 
 function Home() {
   return (
@@ -13,6 +15,8 @@ function Home() {
       <BestSelling />
 
       <Category />
+      <EnhanceMusic />
+      <OurProducts />
       <div>Some</div>
     </div>
   );
