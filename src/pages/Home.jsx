@@ -6,22 +6,26 @@ import EnhanceMusic from "../components/EnhanceMusic";
 import OurProducts from "../components/OurProducts";
 import Featured from "../components/Featured";
 import Services from "../components/Services";
+import Footer from "../components/Footer";
+import Container from "../ui/Container";
 
 function Home() {
   return (
-    <div className="flex flex-col  gap-[90px]">
-      <div className="flex  flex-col-reverse items-start gap-[20px] md:flex-row">
-        <HomeLinks />
-        <HomeSlider />
-      </div>
-      <BestSelling />
+    <div>
+      <Container styles="flex flex-col  gap-[90px]">
+        <div className="flex  flex-col-reverse items-start gap-[20px] md:flex-row">
+          <HomeLinks />
+          <HomeSlider />
+        </div>
+        <BestSelling />
 
-      <Category />
-      <EnhanceMusic />
-      <OurProducts />
-      <Featured />
-      <Services />
-      <div>Some</div>
+        <Category />
+        <EnhanceMusic />
+        <OurProducts />
+        <Featured />
+        <Services />
+      </Container>
+      <Footer />
     </div>
   );
 }
