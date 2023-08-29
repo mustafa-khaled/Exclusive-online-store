@@ -1,6 +1,6 @@
 function SectionHead({ head, description, operations }) {
   return (
-    <div className="flex items-end justify-between">
+    <div className="mb-[20px] flex items-end justify-between">
       <div className="">
         <div className=" mb-[10px] flex items-center gap-[10px]">
           <div

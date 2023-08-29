@@ -4,6 +4,7 @@ import BestSelling from "../components/BestSelling";
 import Category from "../components/Category";
 import EnhanceMusic from "../components/EnhanceMusic";
 import OurProducts from "../components/OurProducts";
+import Featured from "../components/Featured";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <Category />
       <EnhanceMusic />
       <OurProducts />
+      <Featured />
       <div>Some</div>
     </div>
   );
