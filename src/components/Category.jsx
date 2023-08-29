@@ -1,6 +1,6 @@
+import { categoryLinks } from "../data/data";
 import GridContainer from "../ui/GridContainer";
 import SectionHead from "../ui/SectionHead";
-import { categoryLinks } from "../data/data";
 
 function Category() {
   return (

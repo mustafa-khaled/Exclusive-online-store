@@ -140,3 +140,44 @@ export const slides = [
   { url: slideFour },
   { url: slideFive },
 ];
+
+export const footerLinks = [
+  {
+    title: "Exclusive",
+    items: [{ text: "Subscribe" }, { text: "Get 10% Off Your First Order" }],
+  },
+  {
+    title: "Support",
+    items: [
+      { text: "Cairo, Egypt" },
+      { text: "mustafakhaledinfo@gmail.com" },
+      { text: "+201151747091" },
+    ],
+  },
+  {
+    title: "Account",
+    items: [
+      { text: "My Account" },
+      { text: "Login / Register" },
+      { text: "Cart" },
+      { text: "Wishlist" },
+      { text: "Shop" },
+    ],
+  },
+  {
+    title: "Quick Link",
+    items: [
+      { text: "Privacy Policy" },
+      { text: "Terms Of Use" },
+      { text: "FAQ" },
+      { text: "Contact" },
+    ],
+  },
+  {
+    title: "Links",
+    items: [
+      { icon: "fa-brands fa-github", text: "" },
+      { icon: "fa-brands fa-linkedin", text: "" },
+    ],
+  },
+];
