@@ -8,7 +8,7 @@ export default {
         secondary: "#0070d2",
         danger: "#e53d3d",
         white: "#fff",
-        gray: "#ebedee",
+        gray: "#ccc",
       },
     },
   },
