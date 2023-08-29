@@ -24,17 +24,26 @@ function Header() {
   }, []);
 
   return (
-    <header
-      className={`flex h-[70px] items-center border-b border-gray text-primary ${
-        isHeaderFixed ? "fixed-header" : ""
-      }`}
-    >
-      <Container styles={"flex items-center justify-between gap-[10px]"}>
-        <Logo />
-        <HeaderLinks />
-        <HeaderOperations />
-      </Container>
-    </header>
+    <>
+      {/* Header Promotion */}
+      <div className="bg-primary p-[10px] text-center text-gray">
+        <p className="text-sm">
+          Summer Sales For All Swim Suits And Free Express Delivery Of-50%
+        </p>
+      </div>
+
+      <header
+        className={`flex h-[70px] items-center border-b border-gray text-primary ${
+          isHeaderFixed ? "fixed-header" : ""
+        }`}
+      >
+        <Container styles={"flex items-center justify-between gap-[10px]"}>
+          <Logo />
+          <HeaderLinks />
+          <HeaderOperations />
+        </Container>
+      </header>
+    </>
   );
 }
 

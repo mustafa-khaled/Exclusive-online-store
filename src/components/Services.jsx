@@ -1,30 +1,9 @@
-const services = [
-  {
-    id: 1,
-    icon: "fa-solid fa-headset",
-    title: "Free And Fast Delivery",
-    description: " Free Delivery For All Orders Over $140",
-  },
-
-  {
-    id: 2,
-    icon: "fa-solid fa-truck-fast ",
-    title: "24/7 Costumer Service",
-    description: "Friendly 24/7 Customer Support",
-  },
-
-  {
-    id: 3,
-    icon: "fa-regular fa-circle-check",
-    title: "Money Back Guarantee",
-    description: "We Return Money Within 30 Days",
-  },
-];
+import { servicesData } from "../data/data";
 
 function Services() {
   return (
     <div className="flex flex-col items-center justify-center gap-[20px] text-primary sm:flex-row">
-      {services.map((service) => {
+      {servicesData.map((service) => {
         return (
           <div key={service.id} className=" p-[20px] text-center">
             <i
