@@ -6,7 +6,6 @@ import EnhanceMusic from "../components/EnhanceMusic";
 import OurProducts from "../components/OurProducts";
 import Featured from "../components/Featured";
 import Services from "../components/Services";
-import Footer from "../components/Footer";
 import Container from "../ui/Container";
 
 function Home() {
@@ -25,7 +24,6 @@ function Home() {
         <Featured />
         <Services />
       </Container>
-      <Footer />
     </div>
   );
 }

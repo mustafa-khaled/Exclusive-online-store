@@ -2,3 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Add a CSS class to style the fixed header */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  z-index: 999;
+}
+
+/* Add Some Styles For The Active Link */
+.header-links a.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  background-color: #000;
+  width: 100%;
+  height: 1px;
+}
+
+.header-links a.active:hover::before {
+  background-color: #0070d2;
+}
