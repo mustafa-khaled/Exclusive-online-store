@@ -1,15 +1,6 @@
 import GridContainer from "../ui/GridContainer";
 import SectionHead from "../ui/SectionHead";
-
-const links = [
-  {
-    class: "fa-solid fa-mobile",
-  },
-  { class: "fa-solid fa-desktop" },
-  { class: "fa-solid fa-camera" },
-  { class: "fa-solid fa-headphones" },
-  { class: "fa-solid fa-gamepad" },
-];
+import { categoryLinks } from "../data/data";
 
 function Category() {
   return (
@@ -17,7 +8,7 @@ function Category() {
       <SectionHead head="Brose By Category" description="Categories" />
 
       <GridContainer styles=" mt-[20px]  text-primary">
-        {links.map((link) => {
+        {categoryLinks.map((link) => {
           return (
             <div
               key={link.class}

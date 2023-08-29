@@ -1,17 +1,5 @@
 import { useState } from "react";
-import imageOne from "../assets/1.jpg";
-import imageTwo from "../assets/2.jpg";
-import imageThree from "../assets/3.jpg";
-import imageFour from "../assets/4.jpg";
-import imageFive from "../assets/5.jpg";
-
-const slides = [
-  { url: imageOne },
-  { url: imageTwo },
-  { url: imageThree },
-  { url: imageFour },
-  { url: imageFive },
-];
+import { slides } from "../data/data";
 
 function HomeSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
