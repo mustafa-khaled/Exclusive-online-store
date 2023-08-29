@@ -3,8 +3,8 @@ import GridContainer from "../ui/GridContainer";
 
 function Footer() {
   return (
-    <footer className="mt-[70px] bg-primary text-white">
-      <Container styles="py-[50px] ">
+    <footer className="mt-[70px] bg-primary py-[50px] text-white ">
+      <Container>
         <GridContainer>
           <ul className="text-center sm:text-left">
             <li className="mb-[20px] text-2xl">Exclusive</li>
@@ -51,6 +51,18 @@ function Footer() {
           </ul>
         </GridContainer>
       </Container>
+      <p className="mt-[20px] border-t border-gray px-[20px] pt-[20px] text-center text-gray">
+        Copyright &copy;
+        <a
+          href="https://github.com/mustafa-khaled"
+          target="_blank"
+          rel="noreferrer"
+          className="text-secondary"
+        >
+          Mutafa Khaled
+        </a>
+        . all rights reserved.
+      </p>
     </footer>
   );
 }
