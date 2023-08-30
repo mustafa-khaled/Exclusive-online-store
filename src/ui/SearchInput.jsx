@@ -1,6 +1,6 @@
 function SearchInput() {
   return (
-    <div className="  bg-gray hidden  items-center justify-between gap-[10px] px-2 py-1 sm:flex ">
+    <div className="  bg-lightGray hidden  items-center justify-between gap-[10px] px-2 py-1 sm:flex ">
       <input
         type="text"
         placeholder="Search Here.. "

@@ -1,30 +1,38 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-hot-toast";
+import { contactFormInputs } from "../data/data";
+
 import Container from "../ui/Container";
 import Input from "../ui/Input";
 import Textarea from "../ui/Textarea";
 import Button from "../ui/Button";
 
-const formInputs = [
-  {
-    id: 1,
-    type: "text",
-    placeholder: "Your Name",
-    styles: "sm:w-1/3 w-full",
-  },
-  {
-    id: 2,
-    type: "text",
-    placeholder: "Your Email",
-    styles: "sm:w-1/3 w-full",
-  },
-  {
-    id: 3,
-    type: "number",
-    placeholder: "Your Phone",
-    styles: "sm:w-1/3 w-full",
-  },
-];
-
 function Contact() {
+  // Handle Send Message To Email Using EmailJs Library
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_0vmk21e",
+        "template_f2yk3oi",
+        form.current,
+        "BseuyQqkeVExJE9f8",
+      )
+      .then(
+        (result) => {
+          toast.success("Send Successfully");
+        },
+        (error) => {
+          toast.Error(error);
+        },
+      );
+  };
+
   return (
     <Container styles="min-h-[90vh] text-primary flex items-center sm:justify-between justify-center gap-[30px] flex-col sm:flex-row">
       <div className="w-[100%] sm:w-[30%]">
@@ -49,22 +57,27 @@ function Contact() {
         </div>
       </div>
 
-      <form className="w-[100%] sm:w-[70%]">
+      <form ref={form} onSubmit={sendEmail} className="w-[100%] sm:w-[70%]">
         <div className="flex flex-col items-center justify-between gap-[10px] sm:flex-row">
-          {formInputs.map((input) => {
+          {contactFormInputs.map((input) => {
             return (
               <Input
                 key={input.id}
                 type={input.type}
+                name={input.name}
                 placeholder={input.placeholder}
                 styles={input.styles}
               />
             );
           })}
         </div>
-        <Textarea placeholder="Your Message" styles="w-full mt-[10px]" />
+        <Textarea
+          name="message"
+          placeholder="Your Message"
+          styles="w-full mt-[10px]"
+        />
         <div className="text-right">
-          <Button>Send Massage</Button>
+          <Button type="submit">Send Massage</Button>
         </div>
       </form>
     </Container>

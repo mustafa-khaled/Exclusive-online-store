@@ -1,7 +1,17 @@
+import { useNavigate } from "react-router";
 import logoImage from "../assets/Logo.png";
 
 function Logo() {
-  return <img src={logoImage} alt="LogoImage" className="cursor-pointer" />;
+  const navigate = useNavigate();
+
+  return (
+    <img
+      onClick={() => navigate("/")}
+      src={logoImage}
+      alt="LogoImage"
+      className="cursor-pointer"
+    />
+  );
 }
 
 export default Logo;

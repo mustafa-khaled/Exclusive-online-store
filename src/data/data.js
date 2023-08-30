@@ -234,3 +234,27 @@ export const aboutData = [
     title: "Annual gross sale in our site.",
   },
 ];
+
+export const contactFormInputs = [
+  {
+    id: 1,
+    type: "text",
+    placeholder: "Your Name",
+    name: "from_name",
+    styles: "sm:w-1/3 w-full",
+  },
+  {
+    id: 2,
+    type: "email",
+    name: "user_email",
+    placeholder: "Your Email",
+    styles: "sm:w-1/3 w-full",
+  },
+  {
+    id: 3,
+    type: "number",
+    name: "user_phone",
+    placeholder: "Your Phone",
+    styles: "sm:w-1/3 w-full",
+  },
+];
