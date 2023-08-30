@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-hot-toast";
 import { contactFormInputs } from "../data/data";
@@ -8,11 +8,22 @@ import Input from "../ui/Input";
 import Textarea from "../ui/Textarea";
 import Button from "../ui/Button";
 
+const initialFormValues = {
+  userName: "",
+  userEmail: "",
+  message: "",
+  userPhone: 0,
+};
 function Contact() {
+  // Manege Form Inputs
+  const [values, setValues] = useState(initialFormValues);
+
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
   // Handle Send Message To Email Using EmailJs Library
-
   const form = useRef();
-
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -24,8 +35,9 @@ function Contact() {
         "BseuyQqkeVExJE9f8",
       )
       .then(
-        (result) => {
+        () => {
           toast.success("Send Successfully");
+          setValues(initialFormValues);
         },
         (error) => {
           toast.Error(error);
@@ -66,7 +78,9 @@ function Contact() {
                 type={input.type}
                 name={input.name}
                 placeholder={input.placeholder}
-                styles={input.styles}
+                value={values[input.name]}
+                onChange={onChange}
+                styles="sm:w-1/3 w-full"
               />
             );
           })}
@@ -74,6 +88,8 @@ function Contact() {
         <Textarea
           name="message"
           placeholder="Your Message"
+          value={values.message}
+          onChange={(e) => setValues({ ...values, message: e.target.value })}
           styles="w-full mt-[10px]"
         />
         <div className="text-right">

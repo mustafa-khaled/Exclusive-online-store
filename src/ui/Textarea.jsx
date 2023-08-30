@@ -1,9 +1,11 @@
-function Textarea({ placeholder, styles, name }) {
+function Textarea({ placeholder, styles, name, value, onChange }) {
   return (
     <textarea
       name={name}
+      value={value}
+      onChange={onChange}
       placeholder={placeholder}
-      className={`bg-lightGray h-[200px] resize-none  border-0  p-[5px] outline-0 ${styles}`}
+      className={`h-[200px] resize-none border-0  bg-lightGray  p-[5px] outline-0 ${styles}`}
     />
   );
 }
