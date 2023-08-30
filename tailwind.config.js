@@ -9,6 +9,7 @@ export default {
         danger: "#e53d3d",
         white: "#fff",
         gray: "#ccc",
+        lightGray: "#eee",
       },
     },
   },

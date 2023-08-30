@@ -1,4 +1,28 @@
 import Container from "../ui/Container";
+import Input from "../ui/Input";
+import Textarea from "../ui/Textarea";
+import Button from "../ui/Button";
+
+const formInputs = [
+  {
+    id: 1,
+    type: "text",
+    placeholder: "Your Name",
+    styles: "sm:w-1/3 w-full",
+  },
+  {
+    id: 2,
+    type: "text",
+    placeholder: "Your Email",
+    styles: "sm:w-1/3 w-full",
+  },
+  {
+    id: 3,
+    type: "number",
+    placeholder: "Your Phone",
+    styles: "sm:w-1/3 w-full",
+  },
+];
 
 function Contact() {
   return (
@@ -26,24 +50,22 @@ function Contact() {
       </div>
 
       <form className="w-[100%] sm:w-[70%]">
-        <div className="flex items-center justify-between gap-[10px]">
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-1/3 bg-gray"
-          />
-          <input
-            type="text"
-            placeholder="Your Email"
-            className="w-1/3 bg-gray"
-          />
-          <input
-            type="number"
-            placeholder="Your Phone"
-            className="w-1/3 bg-gray"
-          />
+        <div className="flex flex-col items-center justify-between gap-[10px] sm:flex-row">
+          {formInputs.map((input) => {
+            return (
+              <Input
+                key={input.id}
+                type={input.type}
+                placeholder={input.placeholder}
+                styles={input.styles}
+              />
+            );
+          })}
         </div>
-        <textarea placeholder="Your Message" className="bg-gray" />
+        <Textarea placeholder="Your Message" styles="w-full mt-[10px]" />
+        <div className="text-right">
+          <Button>Send Massage</Button>
+        </div>
       </form>
     </Container>
   );

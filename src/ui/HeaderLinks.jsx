@@ -2,14 +2,16 @@ import { NavLink } from "react-router-dom";
 import { useSideBar } from "../context/navBarContext";
 import { headerLinksData } from "../data/data";
 
-function HeaderLinks() {
+function HeaderLinks({ isHeaderFixed }) {
   const { isSideBarActive } = useSideBar();
 
   return (
     <ul
-      className={` header-links fixed	z-30 ${
-        isSideBarActive ? "right-0" : "right-[-100%]"
-      } top-[60px] order-3 flex h-[100vh] w-[100%] flex-col items-center justify-center gap-5 bg-gray md:static md:order-2 md:h-0 md:w-auto md:flex-row`}
+      className={` header-links fixed	z-50 ${
+        isSideBarActive ? "right-0 " : "right-[-100%]"
+      } bg-lightGray ${
+        isHeaderFixed ? "top-[70px]" : "top-[100px]"
+      } order-3 flex h-[100vh] w-[100%] flex-col items-center justify-center gap-5 md:static md:order-2 md:h-0 md:w-auto md:flex-row`}
     >
       {headerLinksData.map((link) => {
         return (
