@@ -1,6 +1,7 @@
 import { categoryLinks } from "../data/data";
 import GridContainer from "../ui/GridContainer";
 import SectionHead from "../ui/SectionHead";
+import SmallBox from "../ui/SmallBox";
 
 function Category() {
   return (
@@ -10,12 +11,9 @@ function Category() {
       <GridContainer styles=" mt-[20px]  text-primary">
         {categoryLinks.map((link) => {
           return (
-            <div
-              key={link.class}
-              className="cursor-pointer border-[2px] border-gray py-[30px] text-center text-2xl  hover:bg-secondary hover:text-white"
-            >
+            <SmallBox key={link.class}>
               <i className={link.class}></i>
-            </div>
+            </SmallBox>
           );
         })}
       </GridContainer>

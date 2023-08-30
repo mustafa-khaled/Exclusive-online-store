@@ -205,32 +205,32 @@ export const servicesData = [
   },
 ];
 
-export const aboutDate = [
+export const aboutData = [
   {
     id: 1,
     number: "10.5K",
     icon: "fa-solid fa-shop",
-    title: "Sellers active our site",
+    title: "Sellers active our site.",
   },
 
   {
     id: 2,
     number: "33k",
     icon: "fa-solid fa-dollar-sign",
-    title: "Monthly Product Sale",
+    title: "Monthly Product Sale.",
   },
 
   {
     id: 3,
     number: "45.5k",
     icon: "fa-solid fa-bag-shopping",
-    title: "Customer active in our site",
+    title: "Customer active in our site.",
   },
 
   {
     id: 4,
     number: "25k",
     icon: "fa-solid fa-sack-dollar",
-    title: "Annual gross sale in our site",
+    title: "Annual gross sale in our site.",
   },
 ];

@@ -1,11 +1,12 @@
+import { aboutData } from "../data/data";
 import photo from "../assets/aboutHero.png";
 import Container from "../ui/Container";
 import Services from "../components/Services";
-// import { aboutDate } from "../data/data";
+import SmallBox from "../ui/SmallBox";
 
 function About() {
   return (
-    <Container>
+    <Container styles="flex flex-col  gap-[90px]">
       <div className="flex min-h-[90vh] flex-col items-center  justify-around gap-[20px] text-primary md:flex-row md:justify-between">
         <div className="w-[100%] md:w-[50%]">
           <h1 className="text-3xl font-semibold">Our Story</h1>
@@ -26,6 +27,24 @@ function About() {
           <img src={photo} alt="Shopping" />
         </div>
       </div>
+
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(230px,1fr))]  gap-10  text-primary md:grid-cols-[repeat(auto-fill,minmax(270px,1fr))]">
+        {aboutData?.map((item) => {
+          return (
+            <SmallBox key={item.id}>
+              <div>
+                <i className={item.icon}></i>
+
+                <h3 className="my-[10px] text-2xl font-semibold">
+                  {item.number}
+                </h3>
+                <p className=" text-sm">{item.title}</p>
+              </div>
+            </SmallBox>
+          );
+        })}
+      </div>
+
       <Services />
     </Container>
   );
