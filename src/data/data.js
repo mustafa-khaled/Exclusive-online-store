@@ -9,6 +9,10 @@ import slideThree from "../assets/3.jpg";
 import slideFour from "../assets/4.jpg";
 import slideFive from "../assets/5.jpg";
 
+import personOne from "../assets/person1.png";
+import personTwo from "../assets/person2.png";
+import personThree from "../assets/person3.png";
+
 export const featuresData = [
   {
     id: 1,
@@ -253,5 +257,55 @@ export const contactFormInputs = [
     type: "number",
     name: "userPhone",
     placeholder: "Your Phone",
+  },
+];
+
+export const teamData = [
+  {
+    id: 1,
+    title: "Will Smith",
+    image: personOne,
+    description: "Product Designer.",
+    links: "",
+  },
+
+  {
+    id: 2,
+    title: "Emma Watson",
+    image: personTwo,
+    description: "Managing Director.",
+    links: "",
+  },
+
+  {
+    id: 3,
+    title: "Tom Cruise",
+    image: personThree,
+    description: "Founder.",
+    links: "",
+  },
+
+  {
+    id: 4,
+    title: "Will Smith",
+    image: personOne,
+    description: "Product Designer.",
+    links: "",
+  },
+
+  {
+    id: 5,
+    title: "Emma Watson",
+    image: personTwo,
+    description: "Managing Director.",
+    links: "",
+  },
+
+  {
+    id: 6,
+    title: "Tom Cruise",
+    image: personThree,
+    description: "Founder.",
+    links: "",
   },
 ];
