@@ -309,3 +309,21 @@ export const teamData = [
     links: "",
   },
 ];
+
+export const signUpFormInputs = [
+  {
+    id: 1,
+    type: "text",
+    placeholder: "Name",
+  },
+  {
+    id: 2,
+    type: "email",
+    placeholder: "Email",
+  },
+  {
+    id: 3,
+    type: "text",
+    placeholder: "Password",
+  },
+];
