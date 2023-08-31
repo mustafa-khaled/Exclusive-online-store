@@ -315,15 +315,39 @@ export const signUpFormInputs = [
     id: 1,
     type: "text",
     placeholder: "Name",
+    name: "userName",
   },
   {
     id: 2,
     type: "email",
     placeholder: "Email",
+    name: "userEmail",
   },
   {
     id: 3,
-    type: "text",
+    type: "number",
+    placeholder: "Phone Number Egy Only",
+    name: "userPhone",
+  },
+  {
+    id: 4,
+    type: "password",
     placeholder: "Password",
+    name: "password",
+  },
+];
+
+export const loginFormInputs = [
+  {
+    id: 1,
+    type: "email",
+    placeholder: "Your Email",
+    name: "userEmail",
+  },
+  {
+    id: 2,
+    type: "password",
+    placeholder: "Your Password",
+    name: "password",
   },
 ];

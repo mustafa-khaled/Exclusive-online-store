@@ -17,6 +17,7 @@ const initialFormValues = {
 function Contact() {
   // Manege Form Inputs
   const [values, setValues] = useState(initialFormValues);
+  const { userName, userEmail, message, userPhone } = values;
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -26,6 +27,7 @@ function Contact() {
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
+    if (!userName || userEmail || !message || !userPhone) return;
 
     emailjs
       .sendForm(
@@ -80,7 +82,6 @@ function Contact() {
                 placeholder={input.placeholder}
                 value={values[input.name]}
                 onChange={onChange}
-                styles="sm:w-1/3 w-full"
               />
             );
           })}
