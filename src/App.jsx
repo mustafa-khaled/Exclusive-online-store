@@ -6,10 +6,19 @@ import About from "./pages/About";
 import SignUp from "./pages/SignUp";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 0,
+    },
+  },
+});
 
 function App() {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -41,7 +50,7 @@ function App() {
           },
         }}
       />
-    </>
+    </QueryClientProvider>
   );
 }
 

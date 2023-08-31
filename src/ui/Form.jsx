@@ -1,5 +1,4 @@
 // Custom Form For Sing Up And Log In
-
 import Input from "./Input";
 import Button from "./Button";
 
@@ -12,6 +11,7 @@ function Form({
   formFooter,
   values,
   setValues,
+  isError,
 }) {
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -39,7 +39,7 @@ function Form({
           />
         ))}
 
-        <div className=" flex w-full items-center justify-between">
+        <div className=" flex w-full items-center justify-between gap-[5px]">
           <Button type="submit">{buttonValue}</Button>
           <p
             className="cursor-pointer text-sm"
@@ -50,6 +50,7 @@ function Form({
           </p>
         </div>
       </form>
+      {isError && <p className="mt-[5px] text-red-400">{isError}</p>}
     </div>
   );
 }

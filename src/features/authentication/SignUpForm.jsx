@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { signUpFormInputs } from "../../data/data";
-import { signUp } from "../../services/apiAuth";
+import { useSignUp } from "./useSignUp";
 import Form from "../../ui/Form";
 
 const initialFormValues = {
@@ -14,10 +14,16 @@ function SignUpForm({ setHasAccount }) {
   const [values, setValues] = useState(initialFormValues);
   const { userName, userEmail, userPhone, password } = values;
 
+  const { signup, isLoading, isError } = useSignUp();
+
+  if (isLoading) return <div>Loading</div>;
+
   function handleSubmit(e) {
     e.preventDefault();
     if (!userName || !userEmail || !userPhone || !password) return;
-    signUp(values);
+
+    // Call the signup function here
+    signup(values);
   }
 
   return (
@@ -30,6 +36,7 @@ function SignUpForm({ setHasAccount }) {
       formHead="Create An Account"
       formFooter="Already have an"
       setHasAccount={setHasAccount}
+      isError={isError}
     />
   );
 }
