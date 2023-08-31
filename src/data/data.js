@@ -1,3 +1,4 @@
+// All static Data
 import featureOne from "../assets/arr1.png";
 import featureTwo from "../assets/arr2.png";
 import featureThree from "../assets/arr3.png";
@@ -61,40 +62,39 @@ export const categoryLinks = [
   { class: "fa-solid fa-gamepad" },
 ];
 
-export const HomeLinksData = [
+export const HomeSideBarData = [
   {
     id: 1,
+    title: "Shop",
+    linkHref: "/women",
+  },
+  {
+    id: 2,
     title: "Women's Fashion",
     linkHref: "/women",
   },
 
   {
-    id: 2,
+    id: 3,
     title: "Men's Fashion",
     linkHref: "/men",
   },
 
   {
-    id: 3,
+    id: 4,
     title: "Electronics",
     linkHref: "/electronics",
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Baby & Toys",
     linkHref: "/baby",
   },
 
   {
-    id: 5,
-    title: "Books",
-    linkHref: "/books",
-  },
-
-  {
     id: 6,
-    title: "Games",
+    title: "Books",
     linkHref: "/books",
   },
 
@@ -128,12 +128,6 @@ export const headerLinksData = [
     id: 3,
     title: "About",
     linkHref: "/about",
-  },
-
-  {
-    id: 4,
-    title: "Sign Up",
-    linkHref: "/signUp",
   },
 ];
 
@@ -334,6 +328,12 @@ export const signUpFormInputs = [
     type: "password",
     placeholder: "Password",
     name: "password",
+  },
+  {
+    id: 5,
+    type: "password",
+    placeholder: "Confirm Password",
+    name: "rePassword",
   },
 ];
 

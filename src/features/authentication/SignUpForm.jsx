@@ -8,11 +8,12 @@ const initialFormValues = {
   userEmail: "",
   userPhone: "",
   password: "",
+  rePassword: "",
 };
 
 function SignUpForm({ setHasAccount }) {
   const [values, setValues] = useState(initialFormValues);
-  const { userName, userEmail, userPhone, password } = values;
+  const { userName, userEmail, userPhone, password, rePassword } = values;
 
   const { signup, isLoading, isError } = useSignUp();
 
@@ -20,10 +21,11 @@ function SignUpForm({ setHasAccount }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!userName || !userEmail || !userPhone || !password) return;
-
-    // Call the signup function here
+    if (!userName || !userEmail || !userPhone || !password || !rePassword) {
+      return;
+    }
     signup(values);
+    console.log(signup(values));
   }
 
   return (
