@@ -2,6 +2,7 @@ import { useState } from "react";
 import { signUpFormInputs } from "../../data/data";
 import { useSignUp } from "./useSignUp";
 import Form from "../../ui/Form";
+import Loader from "../../ui/Loader";
 
 const initialFormValues = {
   userName: "",
@@ -14,10 +15,12 @@ const initialFormValues = {
 function SignUpForm({ setHasAccount }) {
   const [values, setValues] = useState(initialFormValues);
   const { userName, userEmail, userPhone, password, rePassword } = values;
-
   const { signup, isLoading, isError } = useSignUp();
 
-  if (isLoading) return <div>Loading</div>;
+  if (isLoading)
+    return (
+      <Loader styles="w-full flex item-center justify-center    md:w-[50%]" />
+    );
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,7 +28,6 @@ function SignUpForm({ setHasAccount }) {
       return;
     }
     signup(values);
-    console.log(signup(values));
   }
 
   return (

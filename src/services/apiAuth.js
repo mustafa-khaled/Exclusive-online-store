@@ -9,10 +9,6 @@ export function signUp({
   rePassword,
   userPhone,
 }) {
-  if (!userName || !userEmail || !password || !rePassword || !userPhone) {
-    return Promise.reject(new Error("All fields are required"));
-  }
-
   return axios.post(`${PASE_URL}/api/v1/auth/signup`, {
     name: userName,
     email: userEmail,
@@ -22,6 +18,7 @@ export function signUp({
   });
 }
 
+// Sign In
 export function signIn({ userEmail, password }) {
   return axios.post(`${PASE_URL}/api/v1/auth/signin`, {
     email: userEmail,
