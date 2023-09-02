@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../utils/helpers";
+import StarRating from "./StarRating";
 
 function Product({ product }) {
-  const { id, imageCover, title, price, ratingsQuantity } = product;
+  const { id, imageCover, title, price, ratingsQuantity, ratingsAverage } =
+    product;
 
   return (
     <div key={id} className="relative  text-primary">
@@ -23,10 +25,10 @@ function Product({ product }) {
           </Link>
         </div>
       </div>
-      <div className="text-darkGray text-sm font-bold">
-        <span className="">{formatCurrency(price)}</span>
-        <span className="mx-[10px]">Rating</span>
-        <span>({ratingsQuantity})</span>
+      <div className="flex items-center gap-[10px] text-sm font-bold text-darkGray">
+        <p>{formatCurrency(price)}</p>
+        <StarRating ratingsAverage={ratingsAverage} />
+        <p>({ratingsQuantity})</p>
       </div>
     </div>
   );
