@@ -27,3 +27,40 @@
 .header-links a.active:hover::before {
   background-color: #0070d2;
 }
+
+/* Change swiper two button styles */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  position: absolute;
+}
+
+.swiper-button-prev::after {
+  left: 8px;
+}
+.swiper-button-next::after {
+  right: 8px;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #ccc;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px;
+  font-weight: bold;
+}

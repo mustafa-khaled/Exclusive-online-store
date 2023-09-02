@@ -1,10 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar } from "swiper/modules";
 
+import "swiper/css/navigation";
 import "swiper/css";
 //
 
-function SwiperComponent({ data }) {
+function SwiperComponent({ data, isProduct = false }) {
   return (
     <Swiper
       className=" w-full"
@@ -12,6 +13,7 @@ function SwiperComponent({ data }) {
       spaceBetween={50}
       navigation
       pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
       breakpoints={{
         450: {
           slidesPerView: 1,
