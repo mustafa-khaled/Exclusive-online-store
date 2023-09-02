@@ -2,6 +2,7 @@ import { useProducts } from "./useGetProducts";
 import Loader from "../../ui/Loader";
 import GridContainer from "../../ui/GridContainer";
 import Product from "../../ui/Product";
+import Empty from "../../ui/Empty";
 
 function ProductsList() {
   const { products = {}, isLoading } = useProducts();
@@ -10,8 +11,8 @@ function ProductsList() {
     return <Loader styles="h-[80vh] flex items-center justify-center" />;
   }
 
-  if (!products) {
-    return <div>No Products Available</div>;
+  if (!products.length) {
+    return <Empty resource={"failed To fetch Products"} />;
   }
 
   return (

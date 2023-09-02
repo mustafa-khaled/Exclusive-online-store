@@ -9,6 +9,6 @@ export function getProducts() {
       return res.data.data;
     })
     .catch((error) => {
-      throw error;
+      throw new Error("Failed To Get Products Data");
     });
 }
