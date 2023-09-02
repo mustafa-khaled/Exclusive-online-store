@@ -64,3 +64,8 @@
   font-size: 20px;
   font-weight: bold;
 }
+
+/* Show Add to cart btn on hover parent */
+.product-container:hover button {
+  visibility: visible !important;
+}
