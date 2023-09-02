@@ -23,7 +23,10 @@ function OurProducts() {
         operations="operations"
       />
 
-      <GridContainer styles="mt-[20px]">
+      <GridContainer
+        cols="grid-cols-[repeat(auto-fill,minmax(270px,1fr))]"
+        styles="mt-[20px]"
+      >
         {tempBoxes.map((box) => {
           return (
             <div key={box.title} className="bg-secondary text-center">

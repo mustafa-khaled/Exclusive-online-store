@@ -8,7 +8,10 @@ function Category() {
     <div className="border-b border-gray  pb-[40px]">
       <SectionHead head="Brose By Category" description="Categories" />
 
-      <GridContainer styles=" mt-[20px]  text-primary">
+      <GridContainer
+        cols="grid-cols-[repeat(auto-fill,minmax(230px,1fr))]"
+        styles=" mt-[20px]  text-primary"
+      >
         {categoryLinks.map((link) => {
           return (
             <SmallBox key={link.class}>

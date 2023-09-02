@@ -16,7 +16,7 @@ function ProductsList() {
   }
 
   return (
-    <GridContainer>
+    <GridContainer cols="grid-cols-[repeat(auto-fill,minmax(270px,1fr))]">
       {products.length > 0 &&
         products?.map((product) => (
           <Product key={product.id} product={product} />

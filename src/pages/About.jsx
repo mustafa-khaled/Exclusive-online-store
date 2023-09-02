@@ -5,6 +5,7 @@ import Container from "../ui/Container";
 import Services from "../components/Services";
 import SmallBox from "../ui/SmallBox";
 import SwiperComponent from "../ui/SwiperComponent";
+import GridContainer from "../ui/GridContainer";
 
 function About() {
   return (
@@ -31,7 +32,10 @@ function About() {
           </div>
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(230px,1fr))]  gap-10  text-primary md:grid-cols-[repeat(auto-fill,minmax(270px,1fr))]">
+        <GridContainer
+          cols="grid-cols-[repeat(auto-fill,minmax(270px,1fr))]"
+          className="  text-primary md:grid-cols-[repeat(auto-fill,minmax(270px,1fr))]"
+        >
           {aboutData?.map((item) => {
             return (
               <SmallBox key={item.id}>
@@ -46,7 +50,7 @@ function About() {
               </SmallBox>
             );
           })}
-        </div>
+        </GridContainer>
       </Container>
       <Container styles="flex flex-col  gap-[90px] mt-[90px]">
         <SwiperComponent data={teamData} />
