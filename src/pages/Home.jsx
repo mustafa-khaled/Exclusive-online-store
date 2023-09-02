@@ -1,4 +1,4 @@
-import HomeLinks from "../ui/HomeLinks";
+import SidebarLinks from "../ui/SidebarLinks";
 import HomeSlider from "../ui/HomeSlider";
 import BestSelling from "../components/BestSelling";
 import Category from "../components/Category";
@@ -13,7 +13,7 @@ function Home() {
     <div>
       <Container styles="flex flex-col  gap-[90px]">
         <div className="flex  flex-col-reverse items-start gap-[20px] md:flex-row">
-          <HomeLinks />
+          <SidebarLinks />
           <HomeSlider />
         </div>
         <BestSelling />

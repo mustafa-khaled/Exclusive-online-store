@@ -7,6 +7,7 @@ import About from "./pages/About";
 import SignUp from "./pages/SignUp";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Shop from "./pages/Shop";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,6 +27,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
           <Route path="signUp" element={<SignUp />} />
+          <Route path="shop" element={<Shop />} />
         </Routes>
         <Footer />
       </BrowserRouter>

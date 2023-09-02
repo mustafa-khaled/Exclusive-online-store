@@ -66,7 +66,7 @@ export const HomeSideBarData = [
   {
     id: 1,
     title: "Shop",
-    linkHref: "/women",
+    linkHref: "/shop",
   },
   {
     id: 2,
