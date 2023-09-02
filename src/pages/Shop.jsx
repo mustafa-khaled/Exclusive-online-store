@@ -1,4 +1,4 @@
-import { useProducts } from "../features/products/useGetProducts";
+import { useProducts } from "../features/products/useProducts";
 import { useSearchParams } from "react-router-dom";
 import ProductsList from "../features/products/ProductsList";
 import Container from "../ui/Container";

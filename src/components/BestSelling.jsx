@@ -1,7 +1,17 @@
+import { useProducts } from "../features/products/useProducts";
+import SectionHead from "../ui/SectionHead";
+import SwiperComponent from "../ui/SwiperComponent";
+
 function BestSelling() {
+  const { products } = useProducts();
+
   return (
-    <div className="flex h-[300px] items-center justify-center bg-secondary">
-      Best Selling SWiper
+    <div>
+      <SectionHead
+        head="Best Selling Products Products"
+        description="This Month"
+      />
+      <SwiperComponent isProduct={true} data={products} />;
     </div>
   );
 }

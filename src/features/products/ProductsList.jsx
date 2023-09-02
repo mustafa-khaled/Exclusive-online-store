@@ -1,4 +1,4 @@
-import { useProducts } from "./useGetProducts";
+import { useProducts } from "./useProducts";
 import Loader from "../../ui/Loader";
 import GridContainer from "../../ui/GridContainer";
 import Product from "../../ui/Product";

@@ -1,9 +1,10 @@
+//  Swiper For About Team Section And Products Home Section
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar } from "swiper/modules";
 
 import "swiper/css/navigation";
 import "swiper/css";
-//
+import Product from "./Product";
 
 function SwiperComponent({ data, isProduct = false }) {
   return (
@@ -15,17 +16,20 @@ function SwiperComponent({ data, isProduct = false }) {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       breakpoints={{
-        450: {
+        400: {
           slidesPerView: 1,
         },
-        600: {
+        450: {
           slidesPerView: 2,
         },
-        800: {
+        600: {
           slidesPerView: 3,
         },
-        1024: {
+        800: {
           slidesPerView: 4,
+        },
+        1024: {
+          slidesPerView: 5,
         },
       }}
     >
@@ -33,13 +37,22 @@ function SwiperComponent({ data, isProduct = false }) {
         data.map((item) => {
           return (
             <SwiperSlide key={item.id}>
-              <div className=" p-[20px] text-primary">
-                <img src={item.image} alt={item.title} className="w-full" />
-                <h4 className="mt-[10px] text-xl font-semibold">
-                  {item.title}
-                </h4>
-                <p className="text-sm">{item.description}</p>
-              </div>
+              {isProduct ? (
+                <Product product={item} />
+              ) : (
+                <div className=" p-[20px] text-primary">
+                  <img
+                    src={item.image || item.imageCover}
+                    alt={item.title}
+                    className="w-full"
+                  />
+                  <h4 className="mt-[10px] text-xl font-semibold">
+                    {item.title}
+                  </h4>
+
+                  <p className="text-sm">{item.description}</p>
+                </div>
+              )}
             </SwiperSlide>
           );
         })}
