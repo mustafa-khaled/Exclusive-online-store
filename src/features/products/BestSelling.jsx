@@ -1,6 +1,6 @@
-import { useProducts } from "../features/products/useProducts";
-import SectionHead from "../ui/SectionHead";
-import SwiperComponent from "../ui/SwiperComponent";
+import { useProducts } from "./useProducts";
+import SectionHead from "../../ui/SectionHead";
+import SwiperComponent from "../../ui/SwiperComponent";
 
 function BestSelling() {
   const { products } = useProducts();

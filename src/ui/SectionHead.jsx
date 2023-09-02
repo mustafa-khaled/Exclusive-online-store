@@ -15,7 +15,8 @@ function SectionHead({ head, description, operations }) {
 
         <h2 className="text-2xl font-semibold text-primary">{head}</h2>
       </div>
-      {operations}
+
+      {operations && <div>{operations}</div>}
     </div>
   );
 }
