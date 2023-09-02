@@ -17,7 +17,6 @@ function Home() {
           <HomeSlider />
         </div>
         <BestSelling />
-
         <Category />
         <EnhanceMusic />
         <OurProducts />

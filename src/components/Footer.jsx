@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="mt-[70px] bg-primary py-[50px] text-white ">
       <Container>
-        <GridContainer>
+        <GridContainer cols="grid-cols-[repeat(auto-fill,minmax(230px,1fr))]">
           {footerLinks.map((list, index) => (
             <ul key={index} className="text-center sm:text-left">
               <li className="mb-[20px] text-2xl">{list.title}</li>

@@ -3,4 +3,3 @@ function GridContainer({ children, styles, cols }) {
 }
 
 export default GridContainer;
-// grid-cols-[repeat(auto-fill,minmax(230px,1fr))]
