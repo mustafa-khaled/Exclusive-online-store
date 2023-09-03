@@ -28,3 +28,15 @@ export function getByCategory(category) {
       throw new Error("Failed To Get Category Data");
     });
 }
+
+// Get Specific Product
+export function getProduct(id) {
+  return axios
+    .get(`${PASE_URL}/api/v1/products/${id}`)
+    .then((res) => {
+      return res.data.data;
+    })
+    .catch((error) => {
+      throw new Error("Failed To Get Product Data");
+    });
+}

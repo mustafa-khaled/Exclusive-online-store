@@ -11,6 +11,7 @@ import Shop from "./pages/Shop";
 import WomenClose from "./pages/WomenClose";
 import MenClose from "./pages/MenClose";
 import Electronics from "./pages/Electronics";
+import ProductDetails from "./features/products/ProductDetails";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,6 +35,7 @@ function App() {
           <Route path="women" element={<WomenClose />} />
           <Route path="men" element={<MenClose />} />
           <Route path="electronics" element={<Electronics />} />
+          <Route path="product/:id" element={<ProductDetails />} />
         </Routes>
         <Footer />
       </BrowserRouter>
