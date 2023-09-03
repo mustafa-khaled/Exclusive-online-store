@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../utils/helpers";
 import StarRating from "./StarRating";
+import Button from "./Button";
 
 function Product({ product }) {
   const { id, imageCover, title, price, ratingsQuantity, ratingsAverage } =
@@ -29,20 +30,15 @@ function Product({ product }) {
           </Link>
         </div>
       </div>
-      <div className="flex items-center gap-[10px] text-sm font-bold text-darkGray">
+      <div className="flex  items-center gap-[10px] text-sm font-bold text-darkGray">
         <p>{formatCurrency(price)}</p>
         <StarRating ratingsAverage={ratingsAverage} />
         <p>({ratingsQuantity})</p>
       </div>
-      <button
-        className="absolute bottom-[70px] left-[50%] -translate-x-[50%]  bg-primary px-[10px] py-[5px] font-semibold text-gray"
-        style={{
-          visibility: "hidden",
-          transition: "visibility 0.2s",
-        }}
-      >
+
+      <Button styles="absolute bottom-[30%] left-[50%] hidden -translate-x-[50%] -translate-y-[30%]   ">
         Add To Cart
-      </button>
+      </Button>
     </div>
   );
 }
