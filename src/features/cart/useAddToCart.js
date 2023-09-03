@@ -1,17 +1,33 @@
 import { useMutation } from "react-query";
 import { addToCart as addToCartApi } from "../../services/apiCart";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router";
 
 export function useAddToCart(data) {
+  const token = localStorage.getItem("token");
+
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      token: token,
+    },
+  };
+
+  const navigate = useNavigate();
+
   const { mutate: addToCart, isLoading } = useMutation({
-    mutationFn: () => addToCartApi(data),
-    mutationKey: ["productId", data?.productId],
+    mutationFn: (data) => addToCartApi(data, config),
+    mutationKey: ["productId", data?.productId, token],
     onSuccess: () => {
-      toast.success("Product added to cart Successfully");
+      if (config.headers.token) {
+        toast.success("Product added to cart successfully");
+      } else {
+        toast.error("Please log in to add items to your cart.");
+        navigate("/signUp");
+      }
     },
     onError: (err) => {
-      console.log(data);
-      toast.error(err.message);
+      toast.error(err);
     },
   });
 

@@ -1,33 +1,25 @@
 import axios from "axios";
 import { PASE_URL } from "../utils/constants";
 
-const token = localStorage.getItem("token");
-
-const config = {
-  headers: {
-    "Content-Type": "application/json",
-    token: token,
-  },
-};
-
-export function getCart() {
+export function getCart(config) {
   return axios
     .get(`${PASE_URL}/api/v1/cart`, config)
     .then((res) => {
       return res.data.data.products;
     })
     .catch((error) => {
-      throw new Error(error);
+      console.log(error.response.data.message);
+      return error.response.data.message;
     });
 }
 
-export function addToCart(data) {
+export function addToCart(data, config) {
   return axios
     .post(`${PASE_URL}/api/v1/cart`, data, config)
     .then((res) => {
       return res.data;
     })
     .catch((error) => {
-      throw new Error(error);
+      return error.response.data.message;
     });
 }

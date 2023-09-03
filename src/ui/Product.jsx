@@ -5,13 +5,13 @@ import StarRating from "./StarRating";
 import Button from "./Button";
 
 function Product({ product }) {
+  const { addToCart, isLoading } = useAddToCart();
   const { id, imageCover, title, price, ratingsQuantity, ratingsAverage } =
     product;
 
   const data = {
     productId: id,
   };
-  const { addToCart, isLoading } = useAddToCart(data);
 
   return (
     <div
@@ -44,7 +44,7 @@ function Product({ product }) {
 
       <Button
         disabled={isLoading}
-        onClick={addToCart}
+        onClick={() => addToCart(data)}
         styles="absolute bottom-[30%] left-[50%] hidden -translate-x-[50%] -translate-y-[30%]   "
       >
         Add To Cart
