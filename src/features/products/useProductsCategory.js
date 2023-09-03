@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { getByCategory } from "../../services/apiProducts";
 
-function useProductsCategory(categoryId) {
+export function useProductsCategory(categoryId) {
   const { data: categoryProducts, isLoading } = useQuery({
     queryFn: () => getByCategory(categoryId),
     queryKey: ["productsByCategory"],
@@ -9,5 +9,3 @@ function useProductsCategory(categoryId) {
 
   return { categoryProducts, isLoading };
 }
-
-export default useProductsCategory;

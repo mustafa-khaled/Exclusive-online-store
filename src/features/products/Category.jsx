@@ -4,7 +4,7 @@ import Empty from "../../ui/Empty";
 import GridContainer from "../../ui/GridContainer";
 import Loader from "../../ui/Loader";
 import Product from "../../ui/Product";
-import useProductsCategory from "./useProductsCategory";
+import { useProductsCategory } from "./useProductsCategory";
 
 function Category({ categoryId }) {
   const { categoryProducts = {}, isLoading } = useProductsCategory(categoryId);
