@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../utils/helpers";
+import { useAddToCart } from "../features/cart/useAddToCart";
 import StarRating from "./StarRating";
 import Button from "./Button";
 
 function Product({ product }) {
   const { id, imageCover, title, price, ratingsQuantity, ratingsAverage } =
     product;
+
+  const data = {
+    productId: id,
+  };
+  const { addToCart, isLoading } = useAddToCart(data);
 
   return (
     <div
@@ -36,7 +42,11 @@ function Product({ product }) {
         <p>({ratingsQuantity})</p>
       </div>
 
-      <Button styles="absolute bottom-[30%] left-[50%] hidden -translate-x-[50%] -translate-y-[30%]   ">
+      <Button
+        disabled={isLoading}
+        onClick={addToCart}
+        styles="absolute bottom-[30%] left-[50%] hidden -translate-x-[50%] -translate-y-[30%]   "
+      >
         Add To Cart
       </Button>
     </div>
