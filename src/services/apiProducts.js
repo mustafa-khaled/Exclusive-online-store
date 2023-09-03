@@ -16,3 +16,15 @@ export function getProducts({ page, pageSize }) {
       throw new Error("Failed To Get Products Data");
     });
 }
+
+// Get Products By Category
+export function getByCategory(category) {
+  return axios
+    .get(`${PASE_URL}/api/v1/products?category=${category}`)
+    .then((res) => {
+      return res.data.data; // Return the data from the response
+    })
+    .catch((error) => {
+      throw new Error("Failed To Get Category Data");
+    });
+}

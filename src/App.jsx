@@ -8,6 +8,9 @@ import SignUp from "./pages/SignUp";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Shop from "./pages/Shop";
+import WomenClose from "./pages/WomenClose";
+import MenClose from "./pages/MenClose";
+import Electronics from "./pages/Electronics";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,6 +31,9 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="signUp" element={<SignUp />} />
           <Route path="shop" element={<Shop />} />
+          <Route path="women" element={<WomenClose />} />
+          <Route path="men" element={<MenClose />} />
+          <Route path="electronics" element={<Electronics />} />
         </Routes>
         <Footer />
       </BrowserRouter>
