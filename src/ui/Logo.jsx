@@ -9,7 +9,7 @@ function Logo() {
       onClick={() => navigate("/")}
       src={logoImage}
       alt="LogoImage"
-      className="cursor-pointer"
+      className="w-[100px] cursor-pointer sm:w-[auto]"
     />
   );
 }

@@ -22,7 +22,7 @@ export function getByCategory(category) {
   return axios
     .get(`${PASE_URL}/api/v1/products?category=${category}`)
     .then((res) => {
-      return res.data.data; // Return the data from the response
+      return res.data.data;
     })
     .catch((error) => {
       throw new Error("Failed To Get Category Data");

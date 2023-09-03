@@ -14,6 +14,26 @@ import personOne from "../assets/person1.png";
 import personTwo from "../assets/person2.png";
 import personThree from "../assets/person3.png";
 
+export const headerOperationsData = [
+  {
+    id: 1,
+    icon: "fa-regular fa-user",
+    linkHref: "/signUp",
+  },
+
+  {
+    id: 2,
+    icon: "fa-regular fa-heart",
+    linkHref: "/wishList",
+  },
+
+  {
+    id: 3,
+    icon: "fa-solid fa-cart-shopping",
+    linkHref: "/cart",
+  },
+];
+
 export const featuresData = [
   {
     id: 1,
@@ -70,13 +90,13 @@ export const HomeSideBarData = [
   },
   {
     id: 2,
-    title: "Women's Fashion",
+    title: "Women",
     linkHref: "/women",
   },
 
   {
     id: 3,
-    title: "Men's Fashion",
+    title: "Men",
     linkHref: "/men",
   },
 
@@ -84,30 +104,6 @@ export const HomeSideBarData = [
     id: 4,
     title: "Electronics",
     linkHref: "/electronics",
-  },
-
-  {
-    id: 5,
-    title: "Baby & Toys",
-    linkHref: "/baby",
-  },
-
-  {
-    id: 6,
-    title: "Books",
-    linkHref: "/books",
-  },
-
-  {
-    id: 7,
-    title: "Games",
-    linkHref: "/books",
-  },
-
-  {
-    id: 8,
-    title: "Beauty & Health",
-    linkHref: "/books",
   },
 ];
 

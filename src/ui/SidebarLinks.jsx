@@ -3,7 +3,7 @@ import { HomeSideBarData } from "../data/data";
 
 function SidebarLinks() {
   return (
-    <ul className="flex h-[400px] w-[100%]  flex-col items-start justify-around  px-[20px] pt-[20px] md:w-[20%] md:border-r md:border-gray  ">
+    <ul className="flex h-[400px] w-[100%]  flex-col items-start gap-[20px]  px-[20px] pt-[20px] md:w-[20%] md:border-r md:border-gray  ">
       {HomeSideBarData.map((link) => {
         return (
           <li key={link.id} className="w-full border-gray hover:border-b">
