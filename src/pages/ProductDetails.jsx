@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router";
 import { useProduct } from "../features/products/useProduct";
+import { useAddToCart } from "../features/cart/useAddToCart";
 import Container from "../ui/Container";
 import Loader from "../ui/Loader";
 import Empty from "../ui/Empty";
@@ -10,6 +11,12 @@ import Button from "../ui/Button";
 function ProductDetails() {
   const param = useParams();
   const { product = {}, isLoading } = useProduct(param.id);
+
+  const { addToCart, isLoading: adding } = useAddToCart();
+
+  const data = {
+    productId: param.id,
+  };
 
   const [selectedCoverImage, setSelectedCoverImage] = useState(
     product?.imageCover || "",
@@ -53,7 +60,9 @@ function ProductDetails() {
         <p>{description}</p>
         <StarRating ratingsAverage={ratingsAverage} />
         <div>
-          <Button>Add To Cart</Button>
+          <Button disabled={adding} onClick={() => addToCart(data)}>
+            Add To Cart
+          </Button>
         </div>
       </div>
     </Container>

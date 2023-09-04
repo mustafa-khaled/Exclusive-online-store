@@ -1,5 +1,6 @@
 import axios from "axios";
 import { PASE_URL } from "../utils/constants";
+import { toast } from "react-hot-toast";
 
 export function getCart(config) {
   return axios
@@ -8,7 +9,7 @@ export function getCart(config) {
       return res.data.data.products;
     })
     .catch((error) => {
-      return error.response.data.message;
+      toast.error(error.response.data.message);
     });
 }
 
