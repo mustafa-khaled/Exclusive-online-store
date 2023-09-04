@@ -4,7 +4,7 @@ import { useAddToCart } from "../features/cart/useAddToCart";
 import StarRating from "./StarRating";
 import Button from "./Button";
 
-function Product({ product }) {
+function Product({ product, showBtn = true }) {
   const { addToCart, isLoading } = useAddToCart();
   const { id, imageCover, title, price, ratingsQuantity, ratingsAverage } =
     product;
@@ -41,14 +41,15 @@ function Product({ product }) {
         <StarRating ratingsAverage={ratingsAverage} />
         <p>({ratingsQuantity})</p>
       </div>
-
-      <Button
-        disabled={isLoading}
-        onClick={() => addToCart(data)}
-        styles="absolute bottom-[30%] left-[50%] hidden -translate-x-[50%] -translate-y-[30%]   "
-      >
-        Add To Cart
-      </Button>
+      {showBtn && (
+        <Button
+          disabled={isLoading}
+          onClick={() => addToCart(data)}
+          styles="absolute bottom-[30%] left-[50%] hidden -translate-x-[50%] -translate-y-[30%]   "
+        >
+          Add To Cart
+        </Button>
+      )}
     </div>
   );
 }

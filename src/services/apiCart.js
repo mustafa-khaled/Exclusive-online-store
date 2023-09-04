@@ -8,7 +8,6 @@ export function getCart(config) {
       return res.data.data.products;
     })
     .catch((error) => {
-      console.log(error.response.data.message);
       return error.response.data.message;
     });
 }
@@ -21,5 +20,17 @@ export function addToCart(data, config) {
     })
     .catch((error) => {
       return error.response.data.message;
+    });
+}
+
+export function deleteCartItem(config, id) {
+  return axios
+    .delete(`${PASE_URL}/api/v1/cart/${id}`, config)
+    .then((res) => {
+      return res;
+    })
+    .catch((error) => {
+      console.log(error);
+      return error;
     });
 }

@@ -13,7 +13,7 @@ export function useCart() {
 
   const { data: cart, isLoading } = useQuery({
     queryFn: () => getCart(config),
-    queryKey: ["cart"],
+    queryKey: ["cart", config],
   });
   return { cart, isLoading };
 }

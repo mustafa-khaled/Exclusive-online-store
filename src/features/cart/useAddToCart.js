@@ -1,9 +1,11 @@
-import { useMutation } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 import { addToCart as addToCartApi } from "../../services/apiCart";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
 
 export function useAddToCart(data) {
+  const queryClient = useQueryClient();
+
   const token = localStorage.getItem("token");
 
   const config = {
@@ -28,6 +30,9 @@ export function useAddToCart(data) {
     },
     onError: (err) => {
       toast.error(err);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries("cart");
     },
   });
 

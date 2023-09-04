@@ -36,7 +36,7 @@ function SwiperComponent({ data, isProduct = false }) {
           return (
             <SwiperSlide key={item.id}>
               {isProduct ? (
-                <Product product={item} />
+                <Product product={item} showBtn={false} />
               ) : (
                 <div className=" p-[20px] text-primary">
                   <img
