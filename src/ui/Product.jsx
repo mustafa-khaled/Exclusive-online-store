@@ -3,6 +3,7 @@ import { formatCurrency } from "../utils/helpers";
 import { useAddToCart } from "../features/cart/useAddToCart";
 import StarRating from "./StarRating";
 import Button from "./Button";
+import ProductOverlay from "./ProductOverlay";
 
 function Product({ product, showBtn = true }) {
   const { addToCart, isLoading } = useAddToCart();
@@ -14,11 +15,10 @@ function Product({ product, showBtn = true }) {
   };
 
   return (
-    <div
-      key={id}
-      className="product-container relative text-primary"
-      style={{ position: "relative" }}
-    >
+    <div key={id} className="product-container relative text-primary">
+      {/* Background overlay on loading */}
+      {isLoading && <ProductOverlay />}
+
       <img src={imageCover} alt={title} className="w-[100%]" />
       <h3 className="py-[5px] text-base font-medium">
         {title.slice(0, 25)}
@@ -37,13 +37,12 @@ function Product({ product, showBtn = true }) {
         </div>
       </div>
       <div className="flex  items-center gap-[10px] text-sm font-bold text-darkGray">
-        <p>{formatCurrency(price)}</p>
+        <p className="text-secondary">{formatCurrency(price)}</p>
         <StarRating ratingsAverage={ratingsAverage} />
         <p>({ratingsQuantity})</p>
       </div>
-      {showBtn && (
+      {showBtn && !isLoading && (
         <Button
-          disabled={isLoading}
           onClick={() => addToCart(data)}
           styles="absolute bottom-[30%] left-[50%] hidden -translate-x-[50%] -translate-y-[30%]   "
         >

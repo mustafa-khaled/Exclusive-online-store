@@ -61,7 +61,7 @@ function ProductDetails() {
         <StarRating ratingsAverage={ratingsAverage} />
         <div>
           <Button disabled={adding} onClick={() => addToCart(data)}>
-            Add To Cart
+            {adding ? "Loading.." : "Add To Cart"}
           </Button>
         </div>
       </div>

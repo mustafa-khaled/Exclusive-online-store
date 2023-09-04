@@ -2,7 +2,7 @@ import photo from "../assets/AuthImage.png";
 
 function AuthImage() {
   return (
-    <div className="bg-green-500">
+    <div>
       <img
         src={photo}
         alt="signUpPhoto"

@@ -13,7 +13,7 @@ export function useDeleteItem() {
     },
   };
 
-  const { mutate: deleteItem, isLoading: idDeleting } = useMutation({
+  const { mutate: deleteItem, isLoading: isDeleting } = useMutation({
     mutationFn: (id) => deleteCartItem(config, id),
     mutationKey: ["deleteProduct", token],
     onSuccess: () => {
@@ -27,5 +27,5 @@ export function useDeleteItem() {
     },
   });
 
-  return { deleteItem, idDeleting };
+  return { deleteItem, isDeleting };
 }
