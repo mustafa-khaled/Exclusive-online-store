@@ -31,6 +31,18 @@ export function deleteCartItem(config, id) {
       return res;
     })
     .catch((error) => {
+      return error;
+    });
+}
+
+export function updateProductQuantity(id, data, config) {
+  return axios
+    .put(`${PASE_URL}/api/v1/cart/${id}`, data, config)
+    .then((res) => {
+      console.log(res);
+      return res;
+    })
+    .catch((error) => {
       console.log(error);
       return error;
     });
