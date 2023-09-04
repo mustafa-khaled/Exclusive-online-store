@@ -16,17 +16,18 @@ function SwiperComponent({ data, isProduct = false }) {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       breakpoints={{
-        450: {
+        400: {
           slidesPerView: 1,
         },
         600: {
           slidesPerView: 2,
         },
-        800: {
+
+        900: {
           slidesPerView: 3,
         },
         1024: {
-          slidesPerView: 4,
+          slidesPerView: 5,
         },
       }}
     >

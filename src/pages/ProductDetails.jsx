@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useParams } from "react-router";
-import { useProduct } from "./useProduct";
-import Container from "../../ui/Container";
-import Loader from "../../ui/Loader";
-import Empty from "../../ui/Empty";
-import StarRating from "../../ui/StarRating";
-import Button from "../../ui/Button";
+import { useProduct } from "../features/products/useProduct";
+import Container from "../ui/Container";
+import Loader from "../ui/Loader";
+import Empty from "../ui/Empty";
+import StarRating from "../ui/StarRating";
+import Button from "../ui/Button";
 
 function ProductDetails() {
   const param = useParams();
