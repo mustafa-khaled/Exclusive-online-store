@@ -7,14 +7,18 @@ import ProductOverLay from "./ProductOverlay";
 function CartItem({ item }) {
   const { deleteItem, isDeleting } = useDeleteItem();
   const { imageCover, title, id } = item.product;
-
-  const { updateQuantity, isUpdating } = useUpdateQuantity();
+  const { increaseQuantity, decreaseQuantity, isUpdating } =
+    useUpdateQuantity();
 
   const handleQuantityDecrease = () => {
+    const currentCount = parseInt(item.count, 10);
+    decreaseQuantity(id, currentCount);
     console.log("Decrease");
   };
 
   const handleQuantityIncrease = () => {
+    const currentCount = parseInt(item.count, 10);
+    increaseQuantity(id, currentCount);
     console.log("Increase");
   };
 

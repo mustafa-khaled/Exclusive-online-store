@@ -4,18 +4,10 @@ import { toast } from "react-hot-toast";
 
 export function useDeleteItem() {
   const queryClient = useQueryClient();
-  const token = localStorage.getItem("token");
-
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-      token: token,
-    },
-  };
 
   const { mutate: deleteItem, isLoading: isDeleting } = useMutation({
-    mutationFn: (id) => deleteCartItem(config, id),
-    mutationKey: ["deleteProduct", token],
+    mutationFn: (id) => deleteCartItem(id),
+    mutationKey: ["deleteProduct"],
     onSuccess: () => {
       toast.success("Product Deleted Successfully");
     },

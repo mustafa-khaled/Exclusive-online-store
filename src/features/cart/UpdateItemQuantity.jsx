@@ -1,5 +1,3 @@
-import React from "react";
-
 function UpdateItemQuantity({
   item,
   handleQuantityDecrease,
@@ -13,7 +11,7 @@ function UpdateItemQuantity({
       <button
         disabled={isUpdating}
         className="rounded-full bg-gray px-[10px] py-[1px]"
-        onClick={() => handleQuantityDecrease(item.id, currentQuantity - 1)}
+        onClick={handleQuantityDecrease}
       >
         -
       </button>
@@ -21,7 +19,7 @@ function UpdateItemQuantity({
       <button
         disabled={isUpdating}
         className="rounded-full bg-gray px-[10px] py-[1px]"
-        onClick={() => handleQuantityIncrease(item.id, currentQuantity + 1)}
+        onClick={handleQuantityIncrease}
       >
         +
       </button>
@@ -29,4 +27,4 @@ function UpdateItemQuantity({
   );
 }
 
-export default React.memo(UpdateItemQuantity);
+export default UpdateItemQuantity;

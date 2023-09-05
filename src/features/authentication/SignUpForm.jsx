@@ -28,6 +28,7 @@ function SignUpForm({ setHasAccount }) {
       return;
     }
     signup(values);
+    setValues(initialFormValues);
   }
 
   return (
