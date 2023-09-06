@@ -6,7 +6,6 @@ export function getWishList(config) {
   return axios
     .get(`${PASE_URL}/api/v1/wishlist`, config)
     .then((res) => {
-      console.log(res);
       return res.data.data;
     })
     .catch((error) => {
@@ -19,7 +18,6 @@ export function addToWishList(data, config) {
   return axios
     .post(`${PASE_URL}/api/v1/wishlist`, data, config)
     .then((res) => {
-      console.log(res);
       return res.data;
     })
     .catch((error) => {

@@ -16,13 +16,11 @@ function WishList() {
     return <Empty resource={"There are no wish list items."} />;
   }
 
-  console.log(wishList);
-
   return (
     <Container styles="min-h-[90vh]">
       <GridContainer cols="grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
         {wishList.map((item) => (
-          <Product key={item._id} product={item} />
+          <Product key={item._id} product={item} isWishList={true} />
         ))}
       </GridContainer>
     </Container>
