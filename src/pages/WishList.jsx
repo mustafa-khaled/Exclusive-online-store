@@ -18,7 +18,7 @@ function WishList() {
 
   return (
     <Container styles="min-h-[90vh]">
-      <GridContainer cols="grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
+      <GridContainer cols="grid-cols-[repeat(auto-fill,minmax(250px,1fr))] mt-[20px]  text-primary">
         {wishList.map((item) => (
           <Product key={item._id} product={item} isWishList={true} />
         ))}

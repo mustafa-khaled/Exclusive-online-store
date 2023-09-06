@@ -2,7 +2,6 @@ import { useDeleteItem } from "../features/cart/useDeleteItem";
 import { useUpdateQuantity } from "../features/cart/useUpdateQuantity";
 import { formatCurrency } from "../utils/helpers";
 import UpdateItemQuantity from "../features/cart/UpdateItemQuantity";
-import Button from "./Button";
 import ProductOverLay from "./ProductOverlay";
 
 function CartItem({ item }) {
@@ -40,9 +39,9 @@ function CartItem({ item }) {
       </p>
       <div>
         {!isDeleting && (
-          <Button disabled={isDeleting} onClick={() => deleteItem(id)}>
-            Delete
-          </Button>
+          <button disabled={isDeleting} onClick={() => deleteItem(id)}>
+            <i className="fa-solid fa-trash-can"></i>
+          </button>
         )}
       </div>
     </div>
