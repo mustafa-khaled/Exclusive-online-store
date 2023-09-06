@@ -3,7 +3,6 @@ import { getCart } from "../../services/apiCart";
 
 export function useCart() {
   const token = localStorage.getItem("token");
-
   const config = {
     headers: {
       "Content-Type": "application/json",

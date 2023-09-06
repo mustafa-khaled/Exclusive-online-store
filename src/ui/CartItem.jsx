@@ -1,5 +1,6 @@
 import { useDeleteItem } from "../features/cart/useDeleteItem";
 import { useUpdateQuantity } from "../features/cart/useUpdateQuantity";
+import { formatCurrency } from "../utils/helpers";
 import UpdateItemQuantity from "../features/cart/UpdateItemQuantity";
 import Button from "./Button";
 import ProductOverLay from "./ProductOverlay";
@@ -13,17 +14,15 @@ function CartItem({ item }) {
   const handleQuantityDecrease = () => {
     const currentCount = parseInt(item.count, 10);
     decreaseQuantity(id, currentCount);
-    console.log("Decrease");
   };
 
   const handleQuantityIncrease = () => {
     const currentCount = parseInt(item.count, 10);
     increaseQuantity(id, currentCount);
-    console.log("Increase");
   };
 
   return (
-    <div className=" relative flex flex-col items-center justify-between gap-[10px] border-b border-gray py-[20px] text-center md:flex-row md:text-left">
+    <div className=" relative flex flex-col items-center justify-between gap-[10px] border-b border-gray py-[20px] text-center font-semibold md:flex-row md:text-left">
       {isDeleting && <ProductOverLay />}
       <img src={imageCover} alt={title} className="w-[50px]" />
       <h4 className="w-full md:w-1/5">
@@ -36,7 +35,9 @@ function CartItem({ item }) {
         handleQuantityDecrease={handleQuantityDecrease}
         handleQuantityIncrease={handleQuantityIncrease}
       />
-      <p>{item.price}</p>
+      <p className=" text-secondary">
+        {formatCurrency(item.price * item.count)} &times; {item.count}
+      </p>
       <div>
         {!isDeleting && (
           <Button disabled={isDeleting} onClick={() => deleteItem(id)}>

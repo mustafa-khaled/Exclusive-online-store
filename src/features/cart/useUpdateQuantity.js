@@ -7,16 +7,15 @@ export function useUpdateQuantity() {
 
   const { mutate: updateQuantity, isLoading: isUpdating } = useMutation({
     mutationFn: ({ id, count }) => {
-      updateProductQuantity(id, { count: parseInt(count) });
+      return updateProductQuantity(id, { count: parseInt(count) });
     },
-
     mutationKey: ["productUpdate"],
-
-    onError: (err) => {
-      toast.error(err);
-    },
-    onSettled: () => {
+    onSuccess: () => {
       queryClient.invalidateQueries("cart");
+      toast.success("Quantity updated successfully");
+    },
+    onError: (err) => {
+      toast.error("Failed to update quantity");
     },
   });
 
@@ -32,5 +31,5 @@ export function useUpdateQuantity() {
     }
   };
 
-  return { updateQuantity, isUpdating, increaseQuantity, decreaseQuantity };
+  return { increaseQuantity, decreaseQuantity, isUpdating };
 }
