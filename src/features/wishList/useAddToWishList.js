@@ -19,27 +19,27 @@ export function useAddToWishList(data) {
 
   const { mutate: addToWishList, isLoading: isAddingToWishList } = useMutation({
     mutationFn: async (data) => {
+      // Check if the user is logged in
+      if (!token) {
+        toast.error("Please log in to add items to your wish list.");
+        navigate("/signUp");
+        return;
+      }
+
       // Check if the product is in the cart first
       const cart = await getCart(config);
       const productId = data.productId;
 
-      const productInCart = cart.some((item) => item.product.id === productId);
+      const productInCart = cart?.some((item) => item.product.id === productId);
       if (productInCart) {
         toast.error("Product is already in the cart.");
         return;
       }
 
-      // If not in the cart, proceed to add to the wish list
+      // If not in the cart and the user is logged in, proceed to add to the wish list
       try {
         await addToWishListApi(data, config);
-
-        // Check if the user is logged in
-        if (token) {
-          toast.success("Product added to wish list successfully");
-        } else {
-          toast.error("Please log in to add items to your wish list.");
-          navigate("/signUp");
-        }
+        toast.success("Product added to wish list successfully");
       } catch (error) {
         toast.error("Failed to add product to wish list.");
       }
