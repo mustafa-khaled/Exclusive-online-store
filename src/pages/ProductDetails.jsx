@@ -12,7 +12,7 @@ function ProductDetails() {
   const param = useParams();
   const { product = {}, isLoading } = useProduct(param.id);
 
-  const { addToCart, isLoading: adding } = useAddToCart();
+  const { addToCart, isAddingToCart } = useAddToCart();
 
   const data = {
     productId: param.id,
@@ -60,8 +60,8 @@ function ProductDetails() {
         <p>{description}</p>
         <StarRating ratingsAverage={ratingsAverage} />
         <div>
-          <Button disabled={adding} onClick={() => addToCart(data)}>
-            {adding ? "Loading.." : "Add To Cart"}
+          <Button disabled={isAddingToCart} onClick={() => addToCart(data)}>
+            {isAddingToCart ? "Loading.." : "Add To Cart"}
           </Button>
         </div>
       </div>

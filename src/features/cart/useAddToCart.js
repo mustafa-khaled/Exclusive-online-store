@@ -17,7 +17,7 @@ export function useAddToCart(data) {
 
   const navigate = useNavigate();
 
-  const { mutate: addToCart, isLoading } = useMutation({
+  const { mutate: addToCart, isLoading: isAddingToCart } = useMutation({
     mutationFn: (data) => addToCartApi(data, config),
     mutationKey: ["addToCart", data?.productId, token],
     onSuccess: () => {
@@ -36,5 +36,5 @@ export function useAddToCart(data) {
     },
   });
 
-  return { addToCart, isLoading };
+  return { addToCart, isAddingToCart };
 }

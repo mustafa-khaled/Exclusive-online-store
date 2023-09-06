@@ -9,12 +9,11 @@ import { useDeleteItem } from "../features/wishList/useDeleteItem";
 
 function Product({ product, showBtn = true, isWishList = false }) {
   // Add Item To Cart
-  const { addToCart, isLoading } = useAddToCart();
+  const { addToCart, isAddingToCart } = useAddToCart();
   // Add Item To Wish List
-  const { addToWishList, isAdding } = useAddToWishList();
+  const { addToWishList, isAddingToWishList } = useAddToWishList();
   // Delete Item From Wish List
   const { deleteItem, isDeleting } = useDeleteItem();
-
   const { id, imageCover, title, price, ratingsQuantity, ratingsAverage } =
     product;
 
@@ -25,7 +24,11 @@ function Product({ product, showBtn = true, isWishList = false }) {
   return (
     <div key={id} className="product-container relative text-primary">
       {/* Background overlay on loading */}
-      {isLoading || isAdding || isDeleting ? <ProductOverlay /> : ""}
+      {isAddingToWishList || isDeleting || isAddingToCart ? (
+        <ProductOverlay />
+      ) : (
+        ""
+      )}
 
       <img src={imageCover} alt={title} className="w-[100%]" />
       <h3 className="py-[5px] text-base font-medium">
@@ -38,7 +41,7 @@ function Product({ product, showBtn = true, isWishList = false }) {
         data={data}
         id={id}
         addToWishList={addToWishList}
-        isAdding={isAdding}
+        isAdding={isAddingToWishList}
         deleteItem={deleteItem}
         isDeleting={isDeleting}
       />
@@ -47,7 +50,7 @@ function Product({ product, showBtn = true, isWishList = false }) {
         <StarRating ratingsAverage={ratingsAverage} />
         {ratingsQuantity && <p>({ratingsQuantity})</p>}
       </div>
-      {showBtn && !isLoading && !isAdding && !isDeleting && (
+      {showBtn && !isAddingToCart && !isAddingToCart && !isDeleting && (
         <Button
           onClick={() => addToCart(data)}
           styles="absolute bottom-[30%] left-[50%] hidden -translate-x-[50%] -translate-y-[30%]   "

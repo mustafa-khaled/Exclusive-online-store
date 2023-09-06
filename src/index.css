@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Add a CSS class to style the fixed header */
 .fixed-header {
   position: fixed;
