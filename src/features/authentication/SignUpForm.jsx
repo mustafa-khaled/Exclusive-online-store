@@ -19,7 +19,7 @@ function SignUpForm({ setHasAccount }) {
 
   if (isLoading)
     return (
-      <Loader styles="w-full flex item-center justify-center    md:w-[50%]" />
+      <Loader styles="w-full flex item-center justify-center  md:w-[50%]" />
     );
 
   function handleSubmit(e) {

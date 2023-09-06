@@ -14,6 +14,7 @@ import Electronics from "./pages/Electronics";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import WishList from "./pages/WishList";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,6 +28,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route index element={<Home />} />
