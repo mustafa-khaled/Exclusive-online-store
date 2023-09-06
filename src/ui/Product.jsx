@@ -4,9 +4,11 @@ import { useAddToCart } from "../features/cart/useAddToCart";
 import StarRating from "./StarRating";
 import Button from "./Button";
 import ProductOverlay from "./ProductOverlay";
+import { useAddToWishList } from "../features/wishList/useaddToWishList";
 
 function Product({ product, showBtn = true }) {
   const { addToCart, isLoading } = useAddToCart();
+  const { addToWishList, isAdding } = useAddToWishList();
   const { id, imageCover, title, price, ratingsQuantity, ratingsAverage } =
     product;
 
@@ -21,12 +23,12 @@ function Product({ product, showBtn = true }) {
 
       <img src={imageCover} alt={title} className="w-[100%]" />
       <h3 className="py-[5px] text-base font-medium">
-        {title.slice(0, 25)}
-        {title.length > 25 ? "..." : ""}
+        {title?.slice(0, 25)}
+        {title?.length > 25 ? "..." : ""}
       </h3>
       <div className="absolute right-[20px] top-[20px] flex flex-col items-center gap-[5px]">
         <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-white hover:bg-lightGray">
-          <Link>
+          <Link onClick={() => addToWishList(data)}>
             <i className="fa-regular fa-heart text-xl hover:text-secondary"></i>
           </Link>
         </div>
@@ -39,7 +41,7 @@ function Product({ product, showBtn = true }) {
       <div className="flex  items-center gap-[10px] text-sm font-bold text-darkGray">
         <p className="text-secondary">{formatCurrency(price)}</p>
         <StarRating ratingsAverage={ratingsAverage} />
-        <p>({ratingsQuantity})</p>
+        {ratingsQuantity && <p>({ratingsQuantity})</p>}
       </div>
       {showBtn && !isLoading && (
         <Button

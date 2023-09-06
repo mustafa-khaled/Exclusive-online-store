@@ -19,7 +19,7 @@ export function useAddToCart(data) {
 
   const { mutate: addToCart, isLoading } = useMutation({
     mutationFn: (data) => addToCartApi(data, config),
-    mutationKey: ["productId", data?.productId, token],
+    mutationKey: ["addToCart", data?.productId, token],
     onSuccess: () => {
       if (config.headers.token) {
         toast.success("Product added to cart successfully");

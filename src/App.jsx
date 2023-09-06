@@ -13,6 +13,7 @@ import MenClose from "./pages/MenClose";
 import Electronics from "./pages/Electronics";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
+import WishList from "./pages/WishList";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,6 +39,7 @@ function App() {
           <Route path="electronics" element={<Electronics />} />
           <Route path="product/:id" element={<ProductDetails />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="wishList" element={<WishList />} />
         </Routes>
         <Footer />
       </BrowserRouter>
