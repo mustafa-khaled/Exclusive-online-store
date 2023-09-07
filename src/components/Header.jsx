@@ -25,7 +25,7 @@ function Header() {
 
   return (
     <header
-      className={` z-50 flex h-[70px]  items-center border-b border-gray text-primary transition  duration-300 ${
+      className={`  z-50 flex h-[70px]  items-center border-b border-gray text-primary transition  duration-300 ${
         isHeaderFixed ? "fixed-header" : ""
       }`}
     >
