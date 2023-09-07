@@ -18,19 +18,19 @@ export const headerOperationsData = [
   {
     id: 1,
     icon: "fa-regular fa-user",
-    linkHref: "/signUp",
+    linkHref: "./signUp",
   },
 
   {
     id: 2,
     icon: "fa-regular fa-heart",
-    linkHref: "/wishList",
+    linkHref: "./wishList",
   },
 
   {
     id: 3,
     icon: "fa-solid fa-cart-shopping",
-    linkHref: "/cart",
+    linkHref: "./cart",
   },
 ];
 
@@ -86,24 +86,24 @@ export const HomeSideBarData = [
   {
     id: 1,
     title: "Shop",
-    linkHref: "/shop",
+    linkHref: "./shop",
   },
   {
     id: 2,
     title: "Women",
-    linkHref: "/women",
+    linkHref: "./women",
   },
 
   {
     id: 3,
     title: "Men",
-    linkHref: "/men",
+    linkHref: "./men",
   },
 
   {
     id: 4,
     title: "Electronics",
-    linkHref: "/electronics",
+    linkHref: "./electronics",
   },
 ];
 
@@ -117,13 +117,13 @@ export const headerLinksData = [
   {
     id: 2,
     title: "Contact",
-    linkHref: "/contact",
+    linkHref: "./contact",
   },
 
   {
     id: 3,
     title: "About",
-    linkHref: "/about",
+    linkHref: "./about",
   },
 ];
 

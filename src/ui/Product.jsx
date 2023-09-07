@@ -1,11 +1,11 @@
 import { formatCurrency } from "../utils/helpers";
 import { useAddToCart } from "../features/cart/useAddToCart";
 import { useAddToWishList } from "../features/wishList/useaddToWishList";
+import { useDeleteItem } from "../features/wishList/useDeleteItem";
 import StarRating from "./StarRating";
 import Button from "./Button";
 import ProductOverlay from "./ProductOverlay";
 import ProductOperations from "./ProductOperations";
-import { useDeleteItem } from "../features/wishList/useDeleteItem";
 
 function Product({ product, showBtn = true, isWishList = false }) {
   // Add Item To Cart
@@ -31,6 +31,7 @@ function Product({ product, showBtn = true, isWishList = false }) {
       )}
 
       <img src={imageCover} alt={title} className="w-[100%]" />
+
       <h3 className="py-[5px] text-base font-medium">
         {title?.slice(0, 25)}
         {title?.length > 25 ? "..." : ""}
