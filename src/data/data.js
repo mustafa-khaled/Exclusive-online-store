@@ -14,26 +14,6 @@ import personOne from "../assets/person1.png";
 import personTwo from "../assets/person2.png";
 import personThree from "../assets/person3.png";
 
-export const headerOperationsData = [
-  {
-    id: 1,
-    icon: "fa-regular fa-user",
-    linkHref: "./signUp",
-  },
-
-  {
-    id: 2,
-    icon: "fa-regular fa-heart",
-    linkHref: "./wishList",
-  },
-
-  {
-    id: 3,
-    icon: "fa-solid fa-cart-shopping",
-    linkHref: "./cart",
-  },
-];
-
 export const featuresData = [
   {
     id: 1,

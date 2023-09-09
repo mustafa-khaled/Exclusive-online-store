@@ -1,18 +1,47 @@
 import { Link } from "react-router-dom";
-import { headerOperationsData } from "../data/data";
+import { useCart } from "../features/cart/useCart";
+import { useWishList } from "../features/wishList/useWishList";
 import MenuToggle from "./MenuToggle";
 import SearchInput from "./SearchInput";
 
 function HeaderOperations() {
+  // Get Cart And Wish List To Display Length
+  const { cart = {} } = useCart();
+  const { wishList = {} } = useWishList();
+
   return (
     <div className="flex items-center gap-[15px] md:order-2 ">
       <SearchInput />
 
-      {headerOperationsData.map((item) => (
-        <Link key={item.id} to={item.linkHref}>
-          <i className={`${item.icon} text-sm sm:text-lg`}></i>
+      <div>
+        <Link to={"./signUp"}>
+          <i className={`fa-regular fa-user text-lg`}></i>
         </Link>
-      ))}
+      </div>
+
+      <div className="relative">
+        <Link to={"./wishList"}>
+          <i className={`fa-regular fa-heart text-lg`}></i>
+        </Link>
+
+        {wishList?.length > 0 && (
+          <span className="absolute right-[-10px] top-[-5px] flex h-[17px] w-[17px] items-center justify-center rounded-full bg-secondary text-xs  text-white">
+            {wishList?.length}
+          </span>
+        )}
+      </div>
+
+      <div className="relative">
+        <Link to={"./cart"}>
+          <i className={`fa-solid fa-cart-shopping text-lg`}></i>
+        </Link>
+
+        {cart?.products?.length > 0 && (
+          <span className="absolute right-[-10px] top-[-5px] flex h-[17px] w-[17px] items-center justify-center rounded-full bg-secondary text-xs  text-white">
+            {cart?.products?.length}
+          </span>
+        )}
+      </div>
 
       <MenuToggle />
     </div>

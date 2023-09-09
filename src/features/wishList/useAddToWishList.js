@@ -30,7 +30,9 @@ export function useAddToWishList(data) {
       const cart = await getCart(config);
       const productId = data.productId;
 
-      const productInCart = cart?.some((item) => item.product.id === productId);
+      const productInCart = cart?.products?.some(
+        (item) => item.product.id === productId,
+      );
       if (productInCart) {
         toast.error("Product is already in the cart.");
         return;

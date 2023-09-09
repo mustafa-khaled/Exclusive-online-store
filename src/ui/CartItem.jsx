@@ -35,7 +35,8 @@ function CartItem({ item }) {
         handleQuantityIncrease={handleQuantityIncrease}
       />
       <p className=" text-secondary">
-        {formatCurrency(item.price * item.count)} &times; {item.count}
+        {formatCurrency(item.price)}{" "}
+        {item.count > 1 ? <span> &times;{item.count}</span> : ""}
       </p>
       <div>
         {!isDeleting && (

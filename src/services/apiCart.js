@@ -15,7 +15,7 @@ export function getCart(config) {
   return axios
     .get(`${PASE_URL}/api/v1/cart`, config)
     .then((res) => {
-      return res.data.data.products;
+      return res.data.data;
     })
     .catch((error) => {
       toast.error(error.response.data.message);
