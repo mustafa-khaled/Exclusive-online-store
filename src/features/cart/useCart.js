@@ -1,5 +1,6 @@
 import { useQuery } from "react-query";
 import { getCart } from "../../services/apiCart";
+import toast from "react-hot-toast";
 
 export function useCart() {
   const token = localStorage.getItem("token");
@@ -15,7 +16,7 @@ export function useCart() {
     queryKey: ["cart", config],
 
     onError: (err) => {
-      console.log(err);
+      toast.error(err.message);
     },
   });
 
