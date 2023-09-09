@@ -1,6 +1,5 @@
 import axios from "axios";
 import { PASE_URL } from "../utils/constants";
-import { toast } from "react-hot-toast";
 
 const token = localStorage.getItem("token");
 
@@ -18,7 +17,6 @@ export function getWishList(config) {
       return res.data.data;
     })
     .catch((error) => {
-      toast.error(error.response.data.message);
       return error.response.data.message;
     });
 }

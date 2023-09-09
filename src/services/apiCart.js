@@ -1,6 +1,5 @@
 import axios from "axios";
 import { PASE_URL } from "../utils/constants";
-import { toast } from "react-hot-toast";
 
 const token = localStorage.getItem("token");
 
@@ -18,7 +17,7 @@ export function getCart(config) {
       return res.data.data;
     })
     .catch((error) => {
-      toast.error(error.response.data.message);
+      return error.response.data.message;
     });
 }
 
@@ -47,6 +46,17 @@ export function deleteCartItem(id) {
 export function updateProductQuantity(id, data) {
   return axios
     .put(`${PASE_URL}/api/v1/cart/${id}`, data, config)
+    .then((res) => {
+      return res;
+    })
+    .catch((error) => {
+      return error;
+    });
+}
+
+export function clearUserCart() {
+  return axios
+    .delete(`${PASE_URL}/api/v1/cart`, config)
     .then((res) => {
       return res;
     })

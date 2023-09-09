@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { orderFormInputs } from "../../data/data";
+import { useClearCart } from "../cart/useClearCart";
 import Form from "../../ui/Form";
 
 const initialFormValues = {
@@ -10,15 +11,16 @@ const initialFormValues = {
   userNumber: "",
 };
 
-function CheckOutForm({ setHasAccount }) {
+function CheckOutForm() {
   const [values, setValues] = useState(initialFormValues);
+  const { clearCart } = useClearCart();
   const { userName, userEmail, userCity, userAddress, userNumber } = values;
 
   function handleSubmit(e) {
-    if (!userName || !userEmail || !userCity || !userAddress || !userNumber) {
-      e.preventDefault();
-    } else {
+    e.preventDefault();
+    if (userName && userEmail && userCity && userAddress && userNumber) {
       setValues(initialFormValues);
+      clearCart();
     }
   }
 
