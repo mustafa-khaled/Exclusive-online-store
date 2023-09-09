@@ -27,3 +27,5 @@ This is an e-commerce application built using React, The app provides authentica
 
 - **Tailwind CSS**: The app is styled with Tailwind CSS, a utility-first CSS framework. Tailwind CSS streamlines the design process by providing a wide range of pre-built utility classes, allowing for rapid and maintainable UI development.
 
+- **React Router**: Library to manage routing between pages and i embemented navigation using it.
+
