@@ -327,3 +327,39 @@ export const loginFormInputs = [
     name: "password",
   },
 ];
+
+export const orderFormInputs = [
+  {
+    id: 1,
+    type: "text",
+    placeholder: "Your Name",
+    name: "userName",
+  },
+  {
+    id: 2,
+    type: "email",
+    placeholder: "Your Email",
+    name: "userEmail",
+  },
+
+  {
+    id: 3,
+    type: "text",
+    placeholder: "Your City",
+    name: "userCity",
+  },
+
+  {
+    id: 4,
+    type: "text",
+    placeholder: "Your Address",
+    name: "userAddress",
+  },
+
+  {
+    id: 5,
+    type: "number",
+    placeholder: "Your Number",
+    name: "userNumber",
+  },
+];

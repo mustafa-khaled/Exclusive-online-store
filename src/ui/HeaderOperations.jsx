@@ -10,7 +10,7 @@ function HeaderOperations() {
   const { wishList = {} } = useWishList();
 
   return (
-    <div className="flex items-center gap-[15px] md:order-2 ">
+    <div className="flex items-center gap-[20px] md:order-2 md:gap-[15px] ">
       <SearchInput />
 
       <div>

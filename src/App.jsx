@@ -16,6 +16,7 @@ import Cart from "./pages/Cart";
 import WishList from "./pages/WishList";
 import ScrollToTop from "./components/ScrollToTop";
 import NotFoundPage from "./pages/NotFoundPage";
+import CheckOut from "./pages/CheckOut";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,6 +44,7 @@ function App() {
           <Route path="product/:id" element={<ProductDetails />} />
           <Route path="cart" element={<Cart />} />
           <Route path="wishList" element={<WishList />} />
+          <Route path="checkOut" element={<CheckOut />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />

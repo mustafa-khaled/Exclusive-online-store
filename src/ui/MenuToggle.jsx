@@ -8,7 +8,7 @@ function MenuToggle() {
       <i
         className={` ${
           isSideBarActive ? "fa-solid fa-xmark" : "fa-solid fa-bars"
-        } cursor-pointer md:hidden`}
+        } cursor-pointer text-lg md:hidden`}
         onClick={toggleSideBar}
       ></i>
     </div>

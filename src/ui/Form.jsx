@@ -1,4 +1,4 @@
-// Custom Form For Sing Up And Log In
+// Custom Form For Sing Up And Log In And Checkout
 import Input from "./Input";
 import Button from "./Button";
 
@@ -41,13 +41,16 @@ function Form({
 
         <div className=" flex w-full items-center justify-between gap-[5px]">
           <Button type="submit">{buttonValue}</Button>
-          <p
-            className="cursor-pointer text-sm"
-            onClick={() => setHasAccount((c) => !c)}
-          >
-            {formFooter}
-            <span className=" mx-[5px] underline">account</span>?
-          </p>
+
+          {formFooter && (
+            <p
+              className="cursor-pointer text-sm"
+              onClick={() => setHasAccount((c) => !c)}
+            >
+              {formFooter}
+              <span className=" mx-[5px] underline">account</span>?
+            </p>
+          )}
         </div>
       </form>
       {isError && <p className="mt-[5px] text-red-400">{isError}</p>}
