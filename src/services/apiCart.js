@@ -11,6 +11,7 @@ const config = {
 };
 
 export function getCart(config) {
+  if (!config.headers.token) return;
   return axios
     .get(`${PASE_URL}/api/v1/cart`, config)
     .then((res) => {

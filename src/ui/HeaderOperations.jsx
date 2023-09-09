@@ -24,7 +24,7 @@ function HeaderOperations() {
           <i className={`fa-regular fa-heart text-lg`}></i>
         </Link>
 
-        {Array.isArray(wishList)?.length > 0 && (
+        {Array.isArray(wishList) && wishList.length > 0 && (
           <span className="absolute right-[-10px] top-[-5px] flex h-[17px] w-[17px] items-center justify-center rounded-full bg-secondary text-xs  text-white">
             {wishList?.length}
           </span>

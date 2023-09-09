@@ -11,6 +11,7 @@ const config = {
 };
 
 export function getWishList(config) {
+  if (!config.headers.token) return;
   return axios
     .get(`${PASE_URL}/api/v1/wishlist`, config)
     .then((res) => {
