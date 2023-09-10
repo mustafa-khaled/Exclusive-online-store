@@ -30,7 +30,11 @@ function SearchInput() {
       />
       <i className="fa-solid fa-magnifying-glass "></i>
 
-      <div className="absolute bottom-[-110px] left-0 z-[40]  max-h-[100px] w-full   overflow-y-auto bg-white">
+      <div
+        className={`${
+          results.length > 0 ? " h-[100px]" : ""
+        } absolute bottom-[-100px] left-0 z-[40]  w-full   overflow-y-auto bg-white`}
+      >
         {isLoading && "Loading..."}
         {results.length > 0 &&
           results.map((item) => (
